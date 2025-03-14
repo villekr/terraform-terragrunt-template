@@ -42,8 +42,8 @@ Repository is divided in two parts:
 ## Required Tools
 
 The following tools are used:
-* [Terraform](https://www.terraform.io) v1.4.6 - Infrastructure resource templates
-* [Terragrunt](https://terragrunt.gruntwork.io) v0.46.1 - Infrastructure deployment templates
+* [Terraform](https://www.terraform.io) v1.11.2 - Infrastructure resource templates
+* [Terragrunt](https://terragrunt.gruntwork.io) v0.75.6 - Infrastructure deployment templates
 
 # Deploy
 
