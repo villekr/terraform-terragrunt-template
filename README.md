@@ -2,7 +2,7 @@
 Template for a new project using terraform and terragrunt
 
 Steps to get started:
-* Clone this repository and copy the content to a new directory
+* Create a new repository using this template (click "Use this template" on GitHub)
 * Search for "UPDATE!" and replace them with values meaningful to your project
 * Rename the following with a meaningful and descriptive name according to your project:
   * stacks/.../template - stacks/.../frontend
@@ -42,16 +42,18 @@ Repository is divided in two parts:
 ## Required Tools
 
 The following tools are used:
-* [Terraform](https://www.terraform.io) v1.11.2 - Infrastructure resource templates
-* [Terragrunt](https://terragrunt.gruntwork.io) v0.75.6 - Infrastructure deployment templates
+* [Terraform](https://www.terraform.io) v1.14 - Infrastructure resource templates
+* [Terragrunt](https://terragrunt.gruntwork.io) v1.0.3 - Infrastructure deployment templates
 
 # Deploy
 
 Ensure you have refreshed AWS credentials for target AWS account.
 
 ```zsh
-cd deployments/dev/template
+cd deployments/account/dev/template
 terragrunt init
-terragrunt plan
+terragrunt plan --backend-bootstrap
 terragrunt apply
 ```
+
+Note: `--backend-bootstrap` is needed on first run to provision the S3 state bucket. After that, plain `terragrunt plan` / `terragrunt apply` is sufficient.
