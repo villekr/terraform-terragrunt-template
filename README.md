@@ -51,9 +51,9 @@ Ensure you have refreshed AWS credentials for target AWS account.
 
 ```zsh
 cd deployments/account/dev/template
-terragrunt init
-terragrunt plan --backend-bootstrap
+terragrunt init --backend-bootstrap
+terragrunt plan
 terragrunt apply
 ```
 
-Note: `--backend-bootstrap` is needed on first run to provision the S3 state bucket. After that, plain `terragrunt plan` / `terragrunt apply` is sufficient.
+Note: `--backend-bootstrap` is needed on first run to provision the S3 state bucket. After that, plain `terragrunt init` is sufficient.
