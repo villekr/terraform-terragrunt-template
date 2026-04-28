@@ -6,13 +6,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@v4
         with:
-          terraform_version: 1.4.6
+          terraform_version: 1.14.9
       - name: Terraform Fmt
-        id: fmt
         run: terraform fmt -recursive -check -diff
-        continue-on-error: true
